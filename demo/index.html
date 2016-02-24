@@ -4,18 +4,18 @@
     <title>开发阶段demo</title>
     <meta charset="UTF-8">
     <!-- 引入seed -->
-    <script src="http://g.alicdn.com/kissy/k/1.4.8/??seed-min.js,import-style-min.js" data-config="{combine:true}"></script>
-
+    <script type="text/javascript" src="../bower_components/kissy/build/seed.js"></script>
+    <script type="text/javascript" src="../bower_components/kissy/build/import-style.js"></script>
     <!-- 配置模块 -->
     <script>
         var base = '../build';
-        if(KISSY.config('debug')){
-            base = 'http://localhost:5555/demo-bee'
-        }
+        // if(KISSY.config('debug')){
+        //     base = 'http://localhost:5555/kissy-demo'
+        // }
         KISSY.config({
             packages: [
                 {
-                    name: 'demo-bee',
+                    name: 'kissy-demo',
                     base: base,
                     ignorePackageNameInUri: true,
                     combine:false
@@ -27,21 +27,238 @@
 
     <!--引入样式-->
     <script>
-        KISSY.importStyle('demo-bee/index.css');
+        KISSY.importStyle('kissy-demo/index.css');
     </script>
 </head>
 <body>
+<style type="text/css">
+    *{
+        font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+    }
+    .clearfix { 
+        *zoom: 1; 
+    } 
+    .clearfix:before,.clearfix:after { 
+      display: table; 
+      line-height: 0; 
+      content: ""; 
+    }
+    .clearfix:after { 
+      clear: both; 
+    } 
 
+
+
+
+    .topBox{
+        width: 100%;
+        height: 80px;
+        position: relative;
+        margin: 0;
+        background-color: #666;
+    }
+    .topInner{
+        width: 1000px;
+        height: 80px;
+        margin: 0 auto;
+        background-color: #888;
+    }
+    .topLogo{
+        height: 80px;
+        width: 250px;
+        float: left;
+        background-color: #9E0909;
+    }
+    .loginArea{
+        height: 60px;
+        width: 250px;
+        margin-top: 10px;
+        float: right;
+        background-color: #09899E;
+    }
+    .topNav{
+        width: 100%;
+        height: 40px;
+        background-color: #999;
+    }
+    .navInner{
+        width: 1000px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #999;
+    }
+    .topNavUl li{
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        width: 100px;
+        text-align: center;
+        color: white;
+        background-color: #444;
+        list-style: none;
+    }
+    .topNavUl li:hover{
+        background-color: #393939;
+    }
+
+
+    .carousel{
+        width: 100%;
+        height: 300px;
+        background-color: #bbb;
+    }
+
+
+
+
+    .carouselImage{
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+    .tab-content{
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+    .tab-pannel{
+       
+    }
+    .tab-pannel a{
+        display: inline-block;
+        height: 300px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .tab-pannel .banner1{
+        background-image: url("../build/images/banner1.png");
+    }
+    .tab-pannel .banner2{
+        background-image: url("../build/images/banner2.png");
+    }
+    .tab-pannel .banner3{
+        background-image: url("../build/images/banner1.png");
+    }
+    .tab-content img{
+        margin: 0 auto;
+    }
+
+    .tab-nav{
+        width: 200px;
+        position: absolute;
+        bottom: 20px;
+        left: 40%;
+    }
+    .tab-nav li{
+        height: 10px;
+        width: 30px;
+        background-color: red;
+        list-style: none;
+        float: left;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .tab-nav li:hover{
+        background-color: yellow;
+    }
+    .tab-nav .selected{
+        background-color: yellow;
+    }
+
+
+    .indexColumn{
+        width: 100%;
+        height: auto;
+    }
+    .column-stock{
+        width: 1000px;
+        height: 500px;
+        margin: 20px auto 0 auto;
+        background-color: #423;
+    }
+    .column-finance{
+        width: 1000px;
+        height: 500px;
+        margin: 20px auto 0 auto;
+        background-color: #423;
+    }
+    .column-coorperation{
+        width: 1000px;
+        height: 400px;
+        margin: 20px auto 0 auto;
+        background-color: #423;
+    }
+     .bottomInform{
+        width: 100%;
+        height: 240px;
+        margin-top: 20px;
+        background-color: #111;
+    }
+</style>
 <header>
-	 <div class="topBox"></div>
+	 <div class="topBox">
+        <div class="topInner clearfix">
+           <div class="topLogo"></div>
+           <div class="loginArea"></div>
+        </div>   
+     </div>
+     <div class="topNav">
+        <div class="navInner">
+            <ul class="topNavUl clearfix">
+                <a href="#"><li>首页</li></a>
+                <a href="#"><li>股票</li></a>
+                <a href="#"><li>基金</li></a>
+                <a href="#"><li>资讯</li></a>
+                <a href="#"><li>关于我们</li></a>
+                <a href="#"><li>帮助中心</li></a>
+            </ul>
+        </div>
+     </div>
 </header>
 <article>
-
+    <div class="carousel">
+    <div class="carouselImage">
+        <div id="J_tab" class="slide-style">
+            <div class="tab-content"><!--选项卡内容的父容器-->
+                <div class="tab-pannel"><!--选项卡的每项的容器-->
+                    <a class="banner1" href="#"></a>
+                </div>
+                <!--一般情况下，需要指定默认情况非首帧是否显示-->
+                <div class="tab-pannel hidden">
+                    <a class="banner2" href="#"></a><!--第2个选项卡中的内容-->
+                </div>
+                <div class="tab-pannel hidden">
+                    <a class="banner3" href="#"></a><!--第3个选项卡中的内容-->
+                </div>
+                <ul class="tab-nav clearfix"><!--选项卡导航，内容可以是空-->
+                <!--若内容为空，则Slide会创建<li></li>-->
+                    <li class="selected"><a href="#"></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="indexColumn">
+        <div class="column-stock"></div>
+        <div class="column-finance"></div>
+        <div class="column-coorperation"></div>
+    </div>
 </article>
-
+<footer>
+    <div class="bottomInform"></div>
+</footer>
 <!--初始化脚本-->
 <script>
-    KISSY.use('demo-bee/index');
+    KISSY.use('kissy-demo/index');
+</script>
+<script>
+    // 回调传入了S（KISSY对象）和Slide构造器
+    KISSY.use('../build/kg/slide/2.0.2/',function(S,Slide){
+        // 这里调用Slide
+    });
 </script>
 </body>
 </html>

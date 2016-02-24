@@ -1,4 +1,4 @@
-KISSY.add('bee-demo/article/article-view',[],function(S ,require, exports, module) {
+KISSY.add('kissy-demo/article/article-view',[],function(S ,require, exports, module) {
 
 
 var ret = module.exports = function content(undefined){

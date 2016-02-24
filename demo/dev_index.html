@@ -9,12 +9,13 @@
     <!-- 配置模块 -->
     <script>
         var base = '../build';
-        if(KISSY.config('debug')){
-            base = 'http://localhost:5555/demo-bee'
-        }
+        // if(KISSY.config('debug')){
+        //     base = 'http://localhost:5555/demo-bee'
+        // }
         KISSY.config({
             packages: [
                 {
+                    
                     name: 'demo-bee',
                     base: base,
                     ignorePackageNameInUri: true,
