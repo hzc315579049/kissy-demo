@@ -3,9 +3,13 @@
 <head>
     <title>开发阶段demo</title>
     <meta charset="UTF-8">
+        <script type="text/javascript">
+        
+    </script>
     <!-- 引入seed -->
     <script type="text/javascript" src="../bower_components/kissy/build/seed.js"></script>
     <script type="text/javascript" src="../bower_components/kissy/build/import-style.js"></script>
+    <script type="text/javascript" src="../bower_components/echarts.min.js"></script>
     <!-- 配置模块 -->
     <script>
         var base = '../build';
@@ -28,7 +32,9 @@
     <!--引入样式-->
     <script>
         KISSY.importStyle('kissy-demo/index.css');
+        KISSY.importStyle('kissy-demo/navStyle.css');
     </script>
+
 </head>
 <body>
 <style type="text/css">
@@ -64,27 +70,105 @@
     .white{
         color: white;
     }
-    
+    .red{
+        color: #DE3D3D;
+    }
+    .blue{
+        color: #01abff;
+    }
+    .green{
+        color: #36AD4A
+    }
+    .gray{
+        color: #666;
+    }
+    .black{
+        color: #000;
+    }
+    .bg-red{
+        background-color: #DE3D3D;
+    }
+    .bg-green{
+        background-color: #36AD4A;
+    }
+    .ft-12{
+        font-size: 12px;
+    }
+    .ft-15{
+        font-size: 15px;
+    }
+    .ft-20{
+        font-size: 20px;
+    }
+    .ft-25{
+        font-size: 25px;
+    }
+    .outline-gray{
+        outline: 1px solid #ddd;
+    }
 
 
+    .line-l-1{
+        box-sizing: border-box;
+        border-left: 1px solid #000;
+    }
+    .line-l-2{
+        box-sizing: border-box;
+        border-left: 2px solid #000;
+    }
+    .line-l-3{
+        box-sizing: border-box;
+        border-left: 3px solid #000;
+    }
+    .line-l-4{
+        box-sizing: border-box;
+        border-left: 4px solid #000;
+    }
+    .line-l-5{
+        box-sizing: border-box;
+        border-left: 5px solid #000;
+    }
+   .line-b-1{
+        box-sizing: border-box;
+        border-bottom: 1px solid #000;
+    }
+    .line-b-2{
+        box-sizing: border-box;
+        border-bottom: 2px solid #000;
+    }
+    .line-b-3{
+        box-sizing: border-box;
+        border-bottom: 3px solid #000;
+    }
+    .line-b-4{
+        box-sizing: border-box;
+        border-bottom: 4px solid #000;
+    }
+    .line-b-5{
+        box-sizing: border-box;
+        border-bottom: 5px solid #000;
+    }
     .topBox{
         width: 100%;
         height: 80px;
         position: relative;
         margin: 0;
-        background-color: #666;
+        background-color: #fff;
     }
     .topInner{
         width: 1000px;
         height: 80px;
         margin: 0 auto;
-        background-color: #888;
+        background-color: #fff;
     }
     .topLogo{
         height: 80px;
         width: 250px;
         float: left;
-        background-color: #9E0909;
+        background-image: url("http://60.191.25.162:9460/coms/web/img/logo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fff;
     }
     .loginArea{
         height: 60px;
@@ -98,13 +182,17 @@
         height: 40px;
         background-color: #444;
     }
+    .topNav .active{
+        background-color: #333;
+    }
     .navInner{
         width: 1000px;
         height: 40px;
         margin: 0 auto;
         background-color: #444;
     }
-    .topNavUl li{
+
+    .topNavUl a{
         float: left;
         height: 40px;
         line-height: 40px;
@@ -112,10 +200,10 @@
         text-align: center;
         color: white;
         background-color: #444;
-        list-style: none;
+        text-decoration: none;
     }
-    .topNavUl li:hover{
-        background-color: #393939;
+    .topNavUl a:hover{
+        text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
     }
 
 
@@ -136,13 +224,13 @@
      </div>
      <div class="topNav">
         <div class="navInner">
-            <ul class="topNavUl clearfix">
-                <a href="#"><li>首页</li></a>
-                <a href="#"><li>股票</li></a>
-                <a href="#"><li>基金</li></a>
-                <a href="#"><li>资讯</li></a>
-                <a href="#"><li>关于我们</li></a>
-                <a href="#"><li>帮助中心</li></a>
+            <ul class="topNavUl clearfix girl-nav effect-bracket">
+                <a href="" class="active">首页</a>
+                <a href="">股票</a>
+                <a href="">基金</a>
+                <a href="">资讯</a>
+                <a href="">关于我们</a>
+                <a href="">帮助中心</a>
             </ul>
         </div>
      </div>
@@ -180,7 +268,7 @@
                 <div class="bottomLine"></div>
             </div>
             <div class="stockInfo">
-                <div class="stockInfo-index">
+                <div class="stockInfo-index outline-gray">
                     <div class="indexBox">
                         <ul class="indexNum clearfix">
                             <li>
@@ -202,26 +290,158 @@
                             <li class="clear-border-r">创 业 板 指</li>
                         </ul>
                     </div>
-                    <div class="topStock">
-                        <div class="topStock-title"></div>
-                        <ul class="topStock-item">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                    <div class="topStock clearfix">
+                        <div class="topStock-title bg-red white">
+                            <ul>
+                                <li>涨</li>
+                                <li>幅</li>
+                                <li>豪</li>
+                                <li>杰</li>
+                            </ul>
+                        </div>
+                        <ul class="topStock-item red">
+                            <li class="clearfix"><div class="topStock-name">恒生电子</div><div class="topStock-per">+5.67%</div><div class="topStock-grade bg-red white clearfix"><div class="grade-title">涨势评分</div><div class="grade-num">98.53</div></div></li>
+                            <li class="clearfix"><div class="topStock-name">恒生电子</div><div class="topStock-per">+5.67%</div><div class="topStock-grade bg-red white clearfix"><div class="grade-title">涨势评分</div><div class="grade-num">98.53</div></div></li>
+                            <li class="clearfix"><div class="topStock-name">恒生电子</div><div class="topStock-per">+5.67%</div><div class="topStock-grade bg-red white clearfix"><div class="grade-title">涨势评分</div><div class="grade-num">98.53</div></div></li>
+                            <li class="clearfix"><div class="topStock-name">恒生电子</div><div class="topStock-per">+5.67%</div><div class="topStock-grade bg-red white clearfix"><div class="grade-title">涨势评分</div><div class="grade-num">98.53</div></div></li>
+                            <li class="clearfix"><div class="topStock-name">恒生电子</div><div class="topStock-per">+5.67%</div><div class="topStock-grade bg-red white clearfix"><div class="grade-title">涨势评分</div><div class="grade-num">98.53</div></div></li>
                         </ul>
                     </div>
                     <div class="stockTimer">
-                        
+                        <span class="margin"></span>距离 <span class="stockState" id="J_state"></span> 剩余 <span class="stockState-time cd-large cd-slide" id="J_time">${d}天${h}时${m}分${s}秒</span>
                     </div>
                 </div>
-                <div class="stockInfo-act">
-                    
+                <div class="stockInfo-act outline-gray clearfix">
+                    <div class="title">
+                        <p>选股智多星</p>
+                        <div class="changeBtn clearfix">试试手气  <i class="changeIco"></i></div>
+                    </div>
+                    <div class="stockChart">
+                        <div class="stockPrice">
+                            <div class="sName">金证股份</div>
+                            <div class="sPrice">
+                                <table class="red">
+                                      <tr>
+                                          <td class="ft-25" rowspan="2">17.64</td>
+                                          <td class="ft-12">+1.5</td>
+                                      </tr>
+                                      <tr>
+
+                                          <td class="ft-12">+2.3%</td>
+                                      </tr>
+                                  </table>  
+                            </div>
+                        </div>
+                        <div class="timeChart">
+                            <div id="main" style="width: 270px;height:180px;position:relative;top:-30px"></div>
+                        </div>
+                    </div>
+                    <div class="stockFive">
+                        <table class="ft-12">
+                            <tr>
+                                <td class="gray">卖5</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">卖4</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">卖3</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">卖2</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">卖1</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr class="dLine">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="gray">买1</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">买2</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">买3</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">买4</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                            <tr>
+                                <td class="gray">买5</td>
+                                <td class="red" flag="fivePrice">17.53</td>
+                                <td class="black">100</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>     
             </div>
-            <div class="stockNews">
-                
+            <div class="stockNews outline-gray">
+                <div class="newCol-s">
+                    <div class="colTitle gray">要闻直播</div>
+                </div>
+                <div class="newCol-l">
+                    <div class="colTitle gray">股市资讯</div>
+                    <ul>
+                        <li class="hdline_t">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li>
+                        <li class="hdline_s">
+                            <a href="#">打就打，誰袙誰</a><a href="#">打就打，誰袙誰</a>
+                        </li>
+                        <li class="hdline_t">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li>
+                        <li class="hdline_s">
+                            <a href="#">打就打，誰袙誰</a>
+                        </li>
+                        <li class="hdline_t">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li>
+                        <li class="hdline_s">
+                            <a href="#">打就打，誰袙誰</a>
+                        </li>
+                        <li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li>
+                        </li><li class="hdline">
+                            <i></i><a href="#">龙哥让我写demo最后我没完成肯定要被打了</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="column-finance clearfix">
@@ -229,10 +449,25 @@
                 <h3 class="white">理 财</h3>
                 <div class="bottomLine"></div>
             </div>
-            <div class="finance-item-top"></div>
-
-                <div class="finance-item-normal"></div>
-                <div class="finance-item-normal"></div>
+            <div class="finance-item-top line-l-5 outline-gray clearfix">
+                <div class="title clearfix">最新公告<i></i></div><div class="moreBtn">
+                    <a href="#" class="ft-12 blue">更多信息>></a>
+                </div>
+                <div class="noticeBoard">
+                    
+                </div>
+            </div>
+                
+                <div class="finance-item-normal outline-gray">
+                    <div class="title1 line-b-2">
+                        众惠型 <span class="ft-12 gray">收益均衡，稳定性高，适合长期投资</span>
+                    </div>
+                </div>
+                <div class="finance-item-normal outline-gray">
+                        <div class="title2 line-b-2">
+                        尊贵型 <span class="ft-12 gray">高收益，回报快，适合快入快出</span>
+                    </div>
+                </div>
 
         </div>
         <div class="column-coorperation">
@@ -292,18 +527,142 @@
     KISSY.use('kissy-demo/index');
 </script>
 <script>
-    // 回调传入了S（KISSY对象）和Slide构造器
-    // KISSY.use('kg/slide/2.0.2/',function(S,Slide){
-    //     // 这里调用Slide
-    //     var s = new Slide('#J_tab',{
-    //         eventype:'click',//tab上的触发事件
-    //         effect:'hSlide',//切换效果为纵向滚动
-    //         autoSlide:true,//自动播放
-    //         timeout:5000,//切换时间间隔
-    //         speed:1000,//切换速度，越小越快，单位为毫秒
-    //         hoverStop:false//鼠标经过内容是否停止播放
-    //     });
-    // });
+
+    KISSY.add('indexJs',function(S,require,exports,moudle){
+        var Node = require('node');
+        var IO = require('io');
+        var $ = Node.all;
+        KISSY.use('kissy-demo/js/stockTimer,node',function(S,obj){
+            $("#J_state").html(obj.state);
+        });
+
+        // 回调传入了S（KISSY对象）和Slide构造器
+        KISSY.use('kg/slide/2.0.2/,node',function(S,Slide){
+            // 这里调用Slide
+            var s = new Slide('#J_tab',{
+                eventype:'click',//tab上的触发事件
+                effect:'hSlide',//切换效果为纵向滚动
+                autoSlide:true,//自动播放
+                timeout:5000,//切换时间间隔
+                speed:1000,//切换速度，越小越快，单位为毫秒
+                hoverStop:false//鼠标经过内容是否停止播放
+            });
+        });
+        KISSY.use("kg/countdown/2.0.1/index,kissy-demo/js/stockTimer",function(S,Countdown,stockTimer){
+            var time = stockTimer.time;
+            Countdown({
+                el: '#J_time',
+                stopPoint: time,
+                effetc: 'slide'
+            });
+
+        });
+
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.showLoading();
+        IO.get('../demo-data/timeChart.json', function (data) {
+            myChart.hideLoading();
+            console.log(data.shift())
+            var base = -data.reduce(function (min, val) {
+                return Math.floor(Math.min(min, val.l));
+            }, Infinity);
+            myChart.setOption(option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        animation: false
+                    },
+                    formatter: function (params) {
+                        return params[2].name + '<br />' + params[2].value;
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: data.map(function (item) {
+                        return item.date;
+                    }),
+                    axisLabel: {
+                        formatter: function (value, idx) {
+                            var date = new Date(value);
+                            return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    boundaryGap: false
+                },
+                yAxis: {
+                    axisLabel: {
+                        formatter: function (val) {
+                            return (val - base);
+                        }
+                    },
+                    splitNumber: 3,
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [{
+                    name: 'L',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.l + base;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    name: 'U',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.u - item.l;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: '#ccc'
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.value + base;
+                    }),
+                    hoverAnimation: false,
+                    symbolSize: 6,
+                    itemStyle: {
+                        normal: {
+                            color: '#000'
+                        }
+                    },
+                    showSymbol: false
+                }]
+            });
+        });
+    })
+    KISSY.use('indexJs');
+
+
+
+
+    
 </script>
 </body>
 </html>

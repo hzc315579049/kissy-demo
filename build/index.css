@@ -3,19 +3,19 @@ body,ul{
   padding: 0;
 }
 header {
-  color: #fff;
+  color: #000;
   padding: 0px;
 }
 article {
-  color: #fff;
+  color: #000;
   padding: 0px;
 }
 .carousel{
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
-        background-color: #bbb;
-    }
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #bbb;
+}
 
 
 
@@ -84,12 +84,12 @@ article {
 .column-stock{
     width: 1000px;
     margin: 20px auto 0 auto;
-    background-color: #423;
+    background-color: #efefef;
 }
 .titleBox{
     width: 100%;
     height: 40px;
-    background-color: #000;
+    background-color: #444;
 }
 .titleBox h3{
     line-height: 38px;
@@ -159,54 +159,315 @@ article {
     background-color: #eee;
 }
 .topStock-title{
-	height: 20px;
-	width: 100%;
-	background-color: black;
+	width: 30px;
+    height: 100%;
+    float: left;
+}
+.topStock-title ul{
+    margin: 32px 7px 0 7px;
+}
+.topStock-title li{
+    list-style: none;
+    height: 26px;
+}
+.topStock-item{
+    width: 370px;
+    float: left;
+    background-color: white;
+}
+.topStock-item li{
+    height: 34px;
+    width: 100%;
+    list-style: none;
+    box-sizing:border-box;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+.topStock-item span{
+    display: inline-block;
+}
+.topStock-name{
+    height: 34px;
+    width: 82px;
+    line-height: 34px;
+    margin-left: 20px;
+    float: left;
+}
+.topStock-per{
+    height: 34px;
+    width: 80px;
+    line-height: 34px;
+    float: left;
+}
+.topStock-grade{
+    height: 33px;
+    line-height: 33px;
+    float: left;
+    width: 187px;
+}
+.topStock-grade .grade-title{
+    margin-left: 10px;
+    float: left;
+}
+.topStock-grade .grade-num{
+    margin-left: 20px;
+    float: left;
 }
 .stockTimer{
     height: 50px;
+    line-height: 50px;
     width: 100%;
-    background-color: #ddd;
+    color: #666;
+    background-color: #fff;
+}
+.stockTimer .margin{
+    display: inline-block;
+    width: 30px;
+}
+.stockState{
+    font-size: 20px;
 }
 .stockInfo-act{
     height: 230px;
     width: 100%;
     margin-bottom: 20px;
-    background-color: black;
+    background-color: #fff;
+}
+.stockInfo-act .title{
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+.stockInfo-act .title p{
+    margin: 0 30px;
+    float:left;
+}
+.stockInfo-act .changeBtn{
+    float:right;
+    height: 20px;
+    line-height: 20px;
+    background-color: #666;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 3px;
+    margin-top: 2px;
+    padding: 3px; 
+    margin-right: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.stockInfo-act .changeBtn:hover{
+    background-color: #555;
+}
+.stockInfo-act .changeIco{
+    display: block;
+    float: right;
+    margin-left: 5px;   
+    height: 20px;
+    width: 20px;
+    background-image: url("images/iconW.png");
+}
+.stockChart{
+    height: 200px;
+    width: 270px;
+    float: left;
+}
+.stockPrice{
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+.stockPrice .sName{
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    text-indent: 30px;
+    float: left;
+}
+.stockPrice .sPrice{
+    height: 40px;
+    width: 50%;
+    float: left;
+}
+.stockPrice .sPrice tr{
+    height: 10px;
+}
+.stockFive{
+    border-left: 1px solid #ddd;
+    box-sizing: border-box;
+    height: 199px;
+    width: 130px;
+    line-height: 15px;
+    float: left;
+}
+.stockFive table{
+    margin-top: 3px;
+    margin-left: 15px;
+}
+.stockFive .dLine td{
+    background-color: #ddd;
 }
 .stockNews{
     height: 600px;
     width: 520px;
-    background-color: black;
+    background-color: #fff;
     margin: 20px;
     float: left;
 }
+.newCol-s{
+    height: 150px;
+    width: 100%;
+    background-color: white;
+}
+.newCol-l ul{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 400px;
+    list-style: none;
+}
+.hdline_t{
+    position: relative;
+}
+.hdline_s{
+    position: relative;
+    margin-bottom: 5px;
+}
+.hdline{
+    position: relative;
+    line-height: 27px;
+}
 
+.hdline_t a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+}
+.hdline_t a:hover{
+    text-decoration: underline;
+}
+.hdline_s a{
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #666;
+}
+.hdline_s a:hover{
+    text-decoration: underline;
+}
+.hdline a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+.hdline a:hover{
+    text-decoration: underline;
+}
 
+.hdline_t i{
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #da4453;
+}
+.hdline_s i{}
+.hdline i{
+    position: absolute;
+    top: 11px;
+    left: -10px;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #F1B13D;
+}
+.stockNews .colTitle{
+    height: 29px;
+    line-height: 29px;
+    text-indent: 20px;
+    border-bottom: 1px solid #ddd;
+}
 
 .column-finance{
     width: 1000px;
     margin: 20px auto 0 auto;
-    background-color: #423;
+    background-color: #efefef;
 }
 .finance-item-top{
-    height: 80px;
+    height: 90px;
     width: 960px;
     margin: 20px auto 0 auto;
-    background-color: black;
+    background-color: #fff;
+    border-color: #ECA63C!important;
+    padding: 1px 0;
+}
+.finance-item-top .title{
+    height: 20px;
+    line-height: 20px;
+    width: 90px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.finance-item-top .title i{
+    display: block;
+    float: right;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 -60px;
+    background-image: url("images/icon.png");
+}
+.finance-item-top .moreBtn{
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+}
+.finance-item-top .moreBtn a{
+    text-decoration: none;
+}
+.finance-item-top .moreBtn a:hover{
+    color: #026190;
+}
+.noticeBoard{
+    height: 43px;
+    width: 90%;
+    overflow: hidden;
+    color: white;
+    box-shadow: 1px 1px 5px gray;
+    margin: 38px auto;
 }
 .finance-item-normal{
     height: 400px;
     width: 460px;
     margin: 20px;
-    background-color: black;
+    background-color: #fff;
     float: left;
+}
+.finance-item-normal .title1{
+    border-color: #01abff;
+    color: #01abff;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-indent: 15px;
+}
+.finance-item-normal .title2{
+    border-color: #FFCF01;
+    color: #FFCF01;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-indent: 15px;
 }
 .column-coorperation{
     width: 1000px;
     height: auto;
     margin: 20px auto 0 auto;
-    background-color: #423;
+    background-color: #efefef;
 }
 .logoBox{
     width: 960px;
@@ -217,12 +478,13 @@ article {
     width: 960px;
 }
 .logoBox td{
-    background-color: black;
+    background-color: #666;
     width: 189px;
     height: 190px;
     max-width: 190px;
     text-align: center;
     padding: 0;
+    color: #fff
 }
 .logoImgBox{
     width: 129px;
@@ -233,5 +495,23 @@ article {
     margin-bottom: 5px;
     background-color: white;
 }
+
+.cd-large .hand,.cd-flip .handlet{background:url(http://img02.taobaocdn.com/tps/i2/T1N4t1XfxgXXXXXXXX-95-35.png) no-repeat}
+.cd-lite,.cd-medium,.cd-large{display:none;color:gray;font-size:12px;font-family:arial,'\5b8b\4f53'}
+.cd-lite .clock,.cd-medium .clock,.cd-large .clock{font-weight:700}
+.cd-lite s,.cd-medium s,.cd-large s{text-decoration:none}
+.cd-lite .hand,.cd-medium .hand,.cd-large .hand{margin:0 3px}
+.cd-large .hand{display:inline-block;padding:0 2px;width:32px;height:35px;line-height:35px}
+.cd-large .hand-s-ext{width:59px;background-position:-36px 0}
+.cd-lite .digital,.cd-medium .digital,.cd-large .digital{color:#f60;font-size:14px;font-weight:400}
+.cd-medium .digital{color:#404040;font-size:24px}
+.cd-large .digital{color:#fff;font-size:28px}
+.cd-slide .hand{display:inline-block;*position:relative;overflow:hidden;vertical-align:middle}
+.cd-slide .slide-wrap{position:relative;float:left}
+.cd-slide .digital{float:left}
+.cd-slide .slide-wrap .digital{clear:left}
+.cd-flip .hand{position:relative;vertical-align:middle}
+.cd-flip .handlet{position:absolute;top:0;left:0;padding:0 2px;width:32px;height:35px}
+
 
 /*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22src%2Findex.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAI%3BEACF%2CSAAA%3B%3BAAEI%3BEACJ%2CyBAAA%3BEACA%2CWAAA%3BEACA%2CaAAA%3B%3BAAEK%3BEACL%2CyBAAA%3BEACA%2CWAAA%3BEACA%2CaAAA%22%2C%22sourcesContent%22%3A%5B%22body%7B%5Cn%20%20margin%3A%200%3B%5Cn%7D%5Cnheader%7B%5Cn%20%20background-color%3A%20%232b81af%3B%5Cn%20%20color%3A%20%23fff%3B%5Cn%20%20padding%3A%2020px%3B%5Cn%7D%5Cnarticle%7B%5Cn%20%20background-color%3A%20%23009900%3B%5Cn%20%20color%3A%20%23fff%3B%5Cn%20%20padding%3A%2020px%3B%5Cn%7D%22%5D%7D */
