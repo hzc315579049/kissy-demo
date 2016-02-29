@@ -13,9 +13,9 @@
     <!-- 配置模块 -->
     <script>
         var base = '../build';
-        // if(KISSY.config('debug')){
-        //     base = 'http://localhost:5555/kissy-demo'
-        // }
+        if(KISSY.config('debug')){
+            base = 'http://localhost:8080/github/kissy-demo/build'
+        }
         KISSY.config({
             packages: [
                 {
@@ -148,6 +148,21 @@
         box-sizing: border-box;
         border-bottom: 5px solid #000;
     }
+
+    .blur{
+        cursor: pointer;    
+        -webkit-filter: blur(0px); /* Chrome, Opera */
+        -moz-filter: blur(0px);
+        filter: blur(0px);
+        -moz-transition:all 1s; /* Firefox 4 */
+        -webkit-transition:all 1s; /* Safari and Chrome */
+        transition:all 1s;
+    }
+    .blur:hover{
+        -webkit-filter: blur(10px); /* Chrome, Opera */
+        -moz-filter: blur(10px);
+        filter: blur(10px);
+    }
     .topBox{
         width: 100%;
         height: 80px;
@@ -172,10 +187,21 @@
     }
     .loginArea{
         height: 60px;
-        width: 250px;
+        width: 150px;
         margin-top: 10px;
         float: right;
-        background-color: #09899E;
+    }
+    .sign-in a{
+        line-height: 60px;
+        color: #666;
+        float: left;
+        margin-left: 20px;
+    }
+    .sign-up a{
+        line-height: 60px;
+        color: #666;
+        float: right;
+        margin-right: 20px;
     }
     .topNav{
         width: 100%;
@@ -208,7 +234,7 @@
 
 
 
-     .bottomInform{
+    .bottomInform{
         width: 100%;
         height: 240px;
         margin-top: 20px;
@@ -219,7 +245,14 @@
 	 <div class="topBox">
         <div class="topInner clearfix">
            <div class="topLogo"></div>
-           <div class="loginArea"></div>
+           <div class="loginArea gray clearfix">
+               <div class="sign-in">
+                   <a href="javascript:void(0)">登录</a>
+               </div>
+                <div class="sign-up">
+                   <a href="javascript:void(0)">注册</a>
+               </div>
+           </div>
         </div>   
      </div>
      <div class="topNav">
@@ -462,10 +495,120 @@
                     <div class="title1 line-b-2">
                         众惠型 <span class="ft-12 gray">收益均衡，稳定性高，适合长期投资</span>
                     </div>
+                    <div class="column">
+                        <ul>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">低</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">高</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">低</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="finance-item-normal outline-gray">
                         <div class="title2 line-b-2">
                         尊贵型 <span class="ft-12 gray">高收益，回报快，适合快入快出</span>
+                    </div>
+                     <div class="column">
+                        <ul>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">低</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">高</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="td_s">
+                                            <img src="http://attach.bbs.miui.com/forum/201111/28/164854yxjolw31o7nmgrn7.png" alt="" height="70px" width="70px">
+                                        </td>
+                                        <td class="td_l">易方达信用债券A</td>
+                                        <td rowspan="2">
+                                            <h4>近一年涨幅</h4>
+                                            <p class="red">+16.23%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_l"><span class="fundType">债券型</span> 风险等级  <span class="fundRisk">低</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -480,7 +623,10 @@
                     <table>
                         <tr>
                             <td>
-                                <div class="logoImgBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                <div class="logoText">
+                                    这家公司要倒闭了
+                                </div>
+                                <div class="logoImgBox blur"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
                                 <a>财富证券</a>
                             </td>
                             <td>                                
@@ -532,7 +678,7 @@
         var Node = require('node');
         var IO = require('io');
         var $ = Node.all;
-        KISSY.use('kissy-demo/js/stockTimer,node',function(S,obj){
+        KISSY.use('../build/gallary/stockTimer/,node',function(S,obj){
             $("#J_state").html(obj.state);
         });
 
@@ -548,7 +694,7 @@
                 hoverStop:false//鼠标经过内容是否停止播放
             });
         });
-        KISSY.use("kg/countdown/2.0.1/index,kissy-demo/js/stockTimer",function(S,Countdown,stockTimer){
+        KISSY.use("kg/countdown/2.0.1/index,../build/gallary/stockTimer/",function(S,Countdown,stockTimer){
             var time = stockTimer.time;
             Countdown({
                 el: '#J_time',
@@ -658,8 +804,7 @@
         });
     })
     KISSY.use('indexJs');
-
-
+    KISSY.use('');
 
 
     

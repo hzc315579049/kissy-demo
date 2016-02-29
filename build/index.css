@@ -63,17 +63,19 @@ article {
 .tab-nav li{
     height: 10px;
     width: 30px;
-    background-color: red;
+    background-color: #666;
     list-style: none;
     float: left;
     cursor: pointer;
     margin: 20px 10px;
 }
 .tab-nav li:hover{
-    background-color: yellow;
+    background-color: #fff;
+	box-shadow: 1px 1px 5px #fff;
 }
 .tab-nav .selected{
-    background-color: yellow;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px #fff;
 }
 
 
@@ -462,6 +464,44 @@ article {
     line-height: 40px;
     width: 100%;
     text-indent: 15px;
+}
+.finance-item-normal .column li{
+	height: 100px;
+	width: 440px;
+	list-style: none;
+	border: 1px solid #ddd;
+	box-shadow: 1px 1px 3px #ddd;
+	margin: 15px 10px 0 10px;
+}
+.finance-item-normal .column p{
+	font-size: 25px;
+}
+.finance-item-normal td{
+	height: 45px;
+	line-height: 10px;
+	background-color: #fff;
+	width: 120px;
+}
+.finance-item-normal img{
+	margin-left: 20px;
+
+}
+.finance-item-normal .td_s{
+	width: 90px;
+}
+.finance-item-normal .td_l{
+	width: 215px;
+	max-width: 215px;
+	font-size: 15px;
+	text-indent: 20px;	
+}
+.fundType{
+	font-size: 12px;
+	color: #666;
+	margin-right: 10px;
+}
+.fundRisk{
+	font-size: 20px;
 }
 .column-coorperation{
     width: 1000px;
