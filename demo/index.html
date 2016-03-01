@@ -622,11 +622,11 @@
                 <div class="logoBox">
                     <table>
                         <tr>
-                            <td>
-                                <div class="logoText">
+                            <td class="blurEvent">
+                                <div class="blurText">
                                     这家公司要倒闭了
                                 </div>
-                                <div class="logoImgBox blur"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                <div class="logoImgBox blurBox blur"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
                                 <a>财富证券</a>
                             </td>
                             <td>                                
@@ -703,6 +703,14 @@
             });
 
         });
+        KISSY.use("../build/gallary/blurWindow/",function(S,BlurText){
+            var s = new BlurText(".logoImgBox",{
+                speed: 200,
+                timeout: 0
+            })
+        })
+
+
 
         var myChart = echarts.init(document.getElementById('main'));
         myChart.showLoading();

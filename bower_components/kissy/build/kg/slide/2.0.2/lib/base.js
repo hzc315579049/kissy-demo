@@ -1451,8 +1451,7 @@ KISSY.add('kg/slide/2.0.0/base',function(S){
 				animWrapperAutoHeightSetting:true,// beforeSwitch不修改wrappercon 宽高
 				webkitOptimize	:true,
 				triggerDelay:	300, 	// added by jayli 2013-05-21，触碰延时
-				autoActived:	true
-				
+				autoActived:	true	
 			},setParam);
 
 			S.mix(self,{

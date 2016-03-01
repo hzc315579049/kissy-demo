@@ -526,6 +526,9 @@ article {
     padding: 0;
     color: #fff
 }
+.blurText{
+	display: none;
+}
 .logoImgBox{
     width: 129px;
     height: 129px;

@@ -1,4 +1,4 @@
-KISSY.add(function(S){
+ KISSY.add(function(S){
     //作用－本demo中需要用到的开收盘距离时间计算器
     //输出一个对象，包含time-距离时间、state－开盘或收盘字符串
     var time;
