@@ -41,21 +41,14 @@ KISSY.add(function(S){
 				throw new Error('Slide Container Hooker not found');
 			}
 			self.buildParams(config);
-bBox = "."+self.blurClass;
-bText = "."+self.textClass;
+			self.bBox = "."+self.blurClass;
+			self.bText = "."+self.textClass;
 			for(var i = 0;i<self.con.length;i++){
 				var node = self.con[i];
 				self.buildHTML(node);
-				
 			}
-
-			
-
 			//接受参数
 			return this;
-
-			
-
 		},
 		buildParams: function(o){
 			var self = this;
@@ -70,12 +63,16 @@ bText = "."+self.textClass;
 			}
 
 			S.each({
-                speed: 100,
+                speed: 500,
                 timeout: 0,
                 eventype: "hover",
                 blurClass: "blurBox",
-                textClass: "blurText"
+                textClass: "blurText",
+                dirc: "top",
+                blurDepth: 10,
+
 			},setParam);
+			console.log(self.speed)
 			return self;
 		},
 		buildHTML:function(node){
@@ -83,8 +80,8 @@ bText = "."+self.textClass;
 			var h = DOM.height;
 			var w = DOM.width;
 			var dirc = "top";
-			var bNode = children(node,bBox);
-			var tNode = children(node,bText);
+			var bNode = children(node,self.bBox);
+			var tNode = children(node,self.bText);
 			addClass(bNode,"blur");
 			css(node,{"overflow": "hidden"});
 			css(tNode,dirc,-h(node));
@@ -97,33 +94,41 @@ bText = "."+self.textClass;
 		buildEvent:function(node,l){
 			var self = this;
 			var dirc = "top"
-			var speed = self.speed/10;
-			var bText = children(node,bText);
+			var speed = self.speed/100;
+			console.log(speed)
+			var blurDepth = self.blurDepth;
+			var tNode = children(node,self.bText);
+			var bNode =  children(node,self.bBox);
 			S.Event.on(node,"mouseenter",function(){
+				window.clearInterval();
+				css(bNode,{"-webkit-Filter":"blur("+blurDepth+"px)","filter":"blur("+blurDepth+"px)","-o-Filter":"blur("+blurDepth+"px)","-moz-Filter":"blur("+blurDepth+"px)"})
 				var val = l;
 				setInterval(function(){
-					if(val>0){
-						css(bText,dirc,-val+"px");
-							val=val-10;
-							console.log(val);
+					if(val>0||val==0){
+						css(tNode,dirc,-val+"px");
+							val=val-0.02*l;
+						}
+
+					else{
+						window.clearInterval();
+					}
+				},speed)
+
+				
+			})
+			S.Event.on(node,"mouseleave",function(){
+				window.clearInterval();
+				css(bNode,"-webkit-Filter","blur(0px)")
+				var val = 0;
+				setInterval(function(){
+					if(val<l||val==l){
+						css(tNode,dirc,-val+"px");
+							val=val+0.02*l;
 						}
 					else{
 						window.clearInterval();
 					}
-				},3/19)
-				
-			})
-			S.Event.on(node,"mouseleave",function(){
-				var val = 10;
-				setInterval(function(t){
-					if(val>0){
-						css(bText,{});
-							val=val-speed;
-						}
-					else{
-						window.clearInterval()
-					}
-				},40)
+				},speed)
 				
 			})
 		}

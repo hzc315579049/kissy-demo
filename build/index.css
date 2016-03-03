@@ -329,6 +329,55 @@ article {
     width: 400px;
     list-style: none;
 }
+.realTime{
+	overflow: hidden;
+	height: 120px;
+	width: 520px;
+	margin: 0px auto;
+	padding-top: 0.1px;
+	background-color: #666;
+}
+.timeImg{
+	height: 100px;
+	width: 100px;
+	margin: 7px 10px;
+	background-color: red;
+	float: left;
+}
+.timeImg img{
+	height: 100px;
+	width: 100px;
+	box-sizing:border-box;
+	border: 3px solid #fff;
+}
+.timeText{
+	height: 100px;
+	width: 300px;
+	margin: 10px 10px 0 0;
+	float: left;
+}
+.timeText li{
+	list-style: none;
+}
+.timeText a{
+	color: white;
+	font-size: 14px;
+}
+.timeBtn{
+	cursor: pointer;
+	height: 120px;
+	width: 80px;
+	float: left;
+	position: absolute;
+	right: 0;
+	top: 30px;
+	background-image: url(images/next01.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.timeBtn:hover{
+	background-image: url(images/next01H.png);
+}
 .hdline_t{
     position: relative;
 }
@@ -526,19 +575,25 @@ article {
     padding: 0;
     color: #fff
 }
+.blurEvent{
+	z-index: 10;
+}
 .blurText{
+	cursor: pointer;
 	display: none;
+	color: #666;
+	z-index: 5;
 }
 .logoImgBox{
-    width: 129px;
-    height: 129px;
+    width: 190px;
+    height: 190px;
     border: 1px solid gray;
     box-sizing: border-box;
-    margin: 30px;
-    margin-bottom: 5px;
     background-color: white;
 }
-
+.logoImgBox img{
+	margin-top: 30px;
+}
 .cd-large .hand,.cd-flip .handlet{background:url(http://img02.taobaocdn.com/tps/i2/T1N4t1XfxgXXXXXXXX-95-35.png) no-repeat}
 .cd-lite,.cd-medium,.cd-large{display:none;color:gray;font-size:12px;font-family:arial,'\5b8b\4f53'}
 .cd-lite .clock,.cd-medium .clock,.cd-large .clock{font-weight:700}

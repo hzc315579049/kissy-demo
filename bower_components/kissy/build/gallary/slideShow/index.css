@@ -1,0 +1,9 @@
+.slideNews{
+	overflow: hidden;
+}
+.slideNews .box{
+	width: 200%;
+}
+.slideNews .item{
+	float: left;
+}

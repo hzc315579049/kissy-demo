@@ -33,6 +33,7 @@
     <script>
         KISSY.importStyle('kissy-demo/index.css');
         KISSY.importStyle('kissy-demo/navStyle.css');
+        KISSY.importStyle('./gallary/slideShow/index.css');
     </script>
 
 </head>
@@ -148,7 +149,9 @@
         box-sizing: border-box;
         border-bottom: 5px solid #000;
     }
-
+    .pos-r{
+        position: relative;
+    }
     .blur{
         cursor: pointer;    
         -webkit-filter: blur(0px); /* Chrome, Opera */
@@ -157,11 +160,6 @@
         -moz-transition:all 1s; /* Firefox 4 */
         -webkit-transition:all 1s; /* Safari and Chrome */
         transition:all 1s;
-    }
-    .blur:hover{
-        -webkit-filter: blur(10px); /* Chrome, Opera */
-        -moz-filter: blur(10px);
-        filter: blur(10px);
     }
     .topBox{
         width: 100%;
@@ -431,8 +429,47 @@
                 </div>     
             </div>
             <div class="stockNews outline-gray">
-                <div class="newCol-s">
+                <div class="newCol-s slideNews pos-r clearfix">
                     <div class="colTitle gray">要闻直播</div>
+                    <div class="box">
+                        <div class="realTime item clearfix">
+                            <div class="timeImg"><img height="100px" width="100px" src="../build/images/newsimg01.png" alt=""></div>
+                            <div class="timeText">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">新政遭疯狂透支 楼市踏空风险加剧</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">去库存成主基调 全国首套房贷款利率创新低</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">全国楼市冷热不均 35城库存连跌四月</a>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="realTime item clearfix">
+                            <div class="timeImg"><img height="100px" width="100px" src="../build/images/newsimg01.png" alt=""></div>
+                            <div class="timeText">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">12312312312321213123132</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">去库存成主基调 全国首套房贷款利率创新低</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">全国楼市冷热不均 35城库存连跌四月</a>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeBtn"></div>
                 </div>
                 <div class="newCol-l">
                     <div class="colTitle gray">股市资讯</div>
@@ -622,68 +659,92 @@
                 <div class="logoBox">
                     <table>
                         <tr>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
-                                    这家公司要倒闭了
+                                    <p>这家公司要倒闭了</p>
+                                    <p>这家公司要倒闭了</p>
+                                    <p>这家公司要倒闭了</p>
+                                    <p>这家公司要倒闭了</p>
+                                    <p>这家公司要倒闭了</p>
                                 </div>                            
-                                <div class="logoImgBox blurBox blur"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a>
                             </td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了2
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了3
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了4
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了5
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
                         </tr>
                         <tr>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
-                            <td class="blurEvent">
+                            <td>
+                                <div class="blurEvent">
                                 <div class="blurText">
                                     这家公司要倒闭了
                                 </div>                                                            
                                 <div class="logoImgBox blurBox"><img width="128px" height="128px" src="http://img10.cn.gcimg.net/gcproduct/day_20141029/167e16165a0a64c0f719746f9c431c39.jpg"></div>
+                                </div>
                                 <a>财富证券</a></td>
                         </tr>
                     </table>
@@ -732,12 +793,17 @@
         });
         KISSY.use("../build/gallary/blurWindow/",function(S,BlurText){
             var s = new BlurText(".blurEvent",{
-                speed: 200,
-                timeout: 0
+                speed: 500,
+                blurDepth: 15
             })
         })
 
-
+        KISSY.use("../build/gallary/slideShow/",function(S,SlideS){
+            var s = new SlideS("#J_slideNews",{
+                speed: 500,
+                blurDepth: 15
+            })
+        })
 
         var myChart = echarts.init(document.getElementById('main'));
         myChart.showLoading();
@@ -838,7 +904,6 @@
         });
     })
     KISSY.use('indexJs');
-    KISSY.use('');
 
 
     
