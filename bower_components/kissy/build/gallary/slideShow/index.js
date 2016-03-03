@@ -60,6 +60,7 @@ KISSY.add(function(S){
 			var _slide = $("."+self.slideClass);
 			var _box = children(_slide,".box");
 			var _item = children(_slide,".item");
+			_item.
 		},
 		buildEvent:function(){
 			var self = this;
