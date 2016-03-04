@@ -1,7 +1,7 @@
 KISSY.add(function(S){
 	var $ = S.Node.all;	
 	var children = S.DOM.children;
-
+	var css = S.DOM.css;
 	var slideShow = function(){
 
 		// TODO 如何传参?
@@ -30,6 +30,7 @@ KISSY.add(function(S){
 			}
 			self.buildParams(config);
 			self.buildHTML();
+			self.buildEvent();
 
 			//接受参数
 			return this;
@@ -49,8 +50,9 @@ KISSY.add(function(S){
 			S.each({
                 speed: 500,
                 timeout: 0,
-                slideClass: "slideNews",
-                autoPlay: false
+                slideClass: "slideShow",
+                autoPlay: false,
+                reload: function(){}
 			},setParam);
 			console.log(self.speed)
 			return self;
@@ -59,8 +61,12 @@ KISSY.add(function(S){
 			var self = this;
 			var _slide = $("."+self.slideClass);
 			var _box = children(_slide,".box");
-			var _item = children(_slide,".item");
-			_item.
+			var _item = $(".item",_slide)
+			var width = css(_slide,"width")
+			css(_box,{position: "relative"})
+			css(_item,{position: "absolute"})
+			css(_item[0],"left","0");
+			css(_item[1],"left",width);
 		},
 		buildEvent:function(){
 			var self = this;

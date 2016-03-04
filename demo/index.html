@@ -798,10 +798,15 @@
             })
         })
 
-        KISSY.use("../build/gallary/slideShow/",function(S,SlideS){
+        KISSY.use("../build/gallary/slideShow/,dom,node",function(S,SlideS){
+            var $ = S.Node.all;
+            function fuck(){
+                $("slideNews")
+            }
             var s = new SlideS("#J_slideNews",{
                 speed: 500,
-                blurDepth: 15
+                slideClass: "slideNews"
+                reload: fuck
             })
         })
 
